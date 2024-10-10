@@ -642,46 +642,7 @@ nav svg {
       margin-left: auto;
     }
   }
-  
-  /* ---------------------------------------
-    Scrollable Images
---------------------------------------- */
-  .layout-container {
-    background-color: #ebebeb;
-    display: flex; 
-    justify-content: flex-start; 
-    align-items: center; 
-    width: 100%; 
-    margin: 0 auto; 
-    margin-top: 1em; 
-    gap: 1em; 
-    overflow-x: auto; 
-    overflow-y: hidden; 
-    padding: 1em; 
-    scrollbar-width: thin; 
-}
 
-.layout-container img {
-    display: block; 
-    width: 200px; 
-    height: 200px; 
-    object-fit: cover; 
-    border-radius: 10px;
-}
-
-/*Customizing the scrollbar for WebKit browsers (Chrome, Safari)*/
-.layout-container::-webkit-scrollbar {
-    height: 8px; 
-}
-
-.layout-container::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 4px; 
-}
-
-.layout-container::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-}
 
 /* ---------------------------------------
     Hobbies Section
@@ -689,7 +650,7 @@ nav svg {
 .hobby-container {
     display: flex; 
     flex-direction: column; 
-    margin-top: 2em; 
+    margin-top: 1em; 
     gap: 40px; 
     padding: 2em; 
     background-color: #ebebeb;
