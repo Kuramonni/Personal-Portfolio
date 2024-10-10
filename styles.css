@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen:wght@400;700&family=Play:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen:wght@400;700&display=swap');
+
+/* ---------------------------------------
+    Color Variables
+--------------------------------------- */
+:root {
+    --color-1: #182947;
+    --text-color: #f0f0f0;
+    --accent-color: #161616;
+    --background-color: #ebebeb;
+}
+
+/* ---------------------------------------
+    Global Styles
+--------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------
+    Base Styles
+--------------------------------------- */
+html {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+}
+
+html, body {
+    width: 100%; /* Ensure full width */
+    margin: 0; /* Remove default margins */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+
+/* ---------------------------------------
+    Navigation Styles
+--------------------------------------- */
+nav {
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 1000px) {
+    nav a {
+        padding: 0 50px;
+    }
+}
+
+/* Hover effect for links */
+nav a:hover {
+    background-color: #243758;
+}
+
+/* Home link styles */
+nav .home-link {
+    margin-right: auto;
+}
+
+/* SVG icon color */
+nav svg {
+    fill: var(--text-color);
+}
+
+/* Sidebar styles */
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    display: none;
+}
+
+@media screen and (max-width: 450px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        background-color: #182947da;    
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+        backdrop-filter: blur(5px); 
+    }
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 20px;
+        display: block;
+    }
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+
+    }
+}
+
+/* ---------------------------------------
+    Main Section
+--------------------------------------- */
+.main{
+    background: url(img/geo.png) no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.textbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    position: absolute;
+    z-index: 9;
+    gap: 1em;
+}
+
+@media screen and (min-width: 1000px) {
+    .textbox {
+        width: 45%;
+    }
+
+    .textbox h1 {
+        font-size: 3.5em; 
+    }
+    
+}
+
+.textbox img{
+    width: 70%;
+    max-width: 300px;
+    border-radius: 100%;
+    box-shadow: #161616 0 0 10px;
+}
+
+.textbox h1{
+    font-size: 2.5em;
+    color: var(--accent-color);
+}
+
+.textbox p{
+    color: black;
+   background-color: #001d5088;
+    padding: 1em;
+    border-radius: 10px;
+    backdrop-filter: blur(3px); 
+    color: var(--text-color);
+}
+
+.email{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.email a{
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+.email i{
+    color: var(--accent-color);
+}
+
+/* ---------------------------------------
+    FIRST Vertical Bar Animation
+--------------------------------------- */
+.bars {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100vw; 
+    height: 100vh; 
+    overflow: hidden; 
+    gap: 10px; 
+    position: relative;
+}
+
+@media screen and (min-width: 1000px) {
+    .bars {
+        width: 50%;
+    }
+    
+}
+
+.bar {
+    width: calc(100% / 10); 
+    height: 90%;
+    background-color: #ffffff4b;
+    transform: translateY(-100%); 
+    border-bottom-right-radius: 10px; 
+    border-bottom-left-radius: 10px; 
+    backdrop-filter: blur(1px); 
+}
+
+.bar-1, .bar-2 {
+    animation: dropDownFull 2s ease-out forwards;
+}
+
+.bar-3, .bar-4 {
+    animation: dropDownMedium 2.5s ease-out forwards;
+}
+
+.bar-5, .bar-6 {
+    animation: dropDownLess 3s ease-out forwards;
+}
+
+.bar-7, .bar-8 {
+    animation: dropDownEvenLess 3.5s ease-out forwards;
+}
+
+.bar-9, .bar-10 {
+    animation: dropDownSmall 4s ease-out forwards;
+}
+
+@keyframes dropDownFull {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0); 
+    }
+}
+
+@keyframes dropDownMedium {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(-30%); 
+    }
+}
+
+@keyframes dropDownLess {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(-50%); 
+    }
+}
+
+@keyframes dropDownEvenLess {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(-70%); 
+    }
+}
+
+@keyframes dropDownSmall {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(-80%); 
+    }
+}
+
+/* ---------------------------------------
+    Divider Style
+--------------------------------------- */
+.divider{
+    background-color: var(--color-1);
+    color: var(--text-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+}
+
+@media screen and (min-width: 900px) {
+    .divider {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5em;
+    }
+
+    .divider h2{
+        font-size: 3em;
+    }
+    
+}
+
+.icons {
+    display: flex;
+    gap: 1em;
+}
+
+@media screen and (min-width: 900px) {
+    .icons {
+        font-size: x-large;
+    }
+}
+
+.icons a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.icons a:hover {
+    transform: scale(1.2); 
+    color: var(--hover-color); 
+}
+
+/* ---------------------------------------
+    SECOND Horizontal Bar Animation
+--------------------------------------- */
+.horizontal-bars-section {
+    width: 100%;
+    margin-top: 1em;
+    text-align: center;
+    position: relative;
+
+  }
+  
+  .horizontal-bars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+  }
+  
+  .horizontal-bar {
+    width: 0;
+    height: 15px;
+    background-color: #3875c452; 
+    transition: width 1s ease-out; 
+  }
+  
+  .horizontal-bar.animate {
+    width: 100%;
+  }
+
+/* ---------------------------------------
+    Skills Section
+--------------------------------------- */
+.skills {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 20px;
+    margin-bottom: 2em;
+}
+
+.skill-item {
+    width: 100%;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+    .skills {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: stretch; 
+        gap: 2em;
+        margin-bottom: 3em;
+    }
+
+    .skill-item {
+        width: 22%; 
+        max-width: 25%; 
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skill-heading {
+        flex-grow: 0; 
+    }
+
+    ul {
+        flex-grow: 1; 
+    }
+}
+
+.skill-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    background: linear-gradient(45deg, 
+    #182947 0%, 
+    #1c3d5a 25%, 
+    #264774 50%, 
+    #2a3e5f 75%, 
+    #3875c4 100%
+);
+    padding: 0.5em;
+    border-radius: 10px;
+    color: var(--text-color);
+  }
+
+.skill-item ul{
+    padding: 1em;
+    list-style: none;
+}
+
+.skill-item ul li:first-child{
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+/* ---------------------------------------
+    Education Section
+--------------------------------------- */
+.education{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3em;
+
+    background: url(waves2.svg) no-repeat;
+    background-size: cover;
+}
+
+.certs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+}
+
+.certs img{
+    width: 30%;
+    height: auto;
+    border-radius: 100%;
+    box-shadow: #161616 0 0 10px;
+}
+
+.school{
+    background-color: #0354e042;
+    padding: 1em;
+    color: black;
+    margin: 1em;
+    border-radius: 10px;
+    backdrop-filter: blur(3px); 
+    width: 90%;
+    text-align: center;
+    box-shadow: #182947 0 0 10px;
+}
+
+.school h4{
+    margin-top: 1em;
+}
+
+.infotext{
+    background-color: #0354e042;
+    color: black;
+    margin: 1em;
+    border-radius: 10px;
+    backdrop-filter: blur(3px); /* Add a blur effect */
+    box-shadow: #182947 0 0 10px;
+    width: 90%;
+    text-align: center;
+}
+
+.infotext p{
+    padding: 1em;
+}
+
+.infotext h3{
+    margin-top: 1em;
+}
+
+/* ---------------------------------------
+    Left Side On Desktop
+--------------------------------------- */
+.left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+/* ---------------------------------------
+    Right Side On Desktop
+--------------------------------------- */
+.right-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.text-on-img{
+    background-image: url(img/shapes.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: #182947 0 0 10px;
+    text-align: center;
+    margin: 1em;
+}
+
+.text-on-img p{
+    padding: 1em;
+}
+
+.text-on-img h3{
+    margin-top: 1em;
+}
+
+@media screen and (min-width: 900px) {
+    .education {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2em;
+    }
+    
+}
+
+/* ---------------------------------------
+    THIRD bar animation (visible only on mobile)
+--------------------------------------- */
+.bar-container {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    margin: 1em 0; 
+  }
+
+  @media screen and (min-width: 900px) {
+    .bar-container {
+        display: none;
+    }
+    
+  }
+  
+  /* Left to Right Bar */
+.bar-left {
+    height: 25px; 
+    background-color: #ffffffab;  
+    width: 0;  
+    backdrop-filter: blur(3px);  
+    box-shadow: #ffffff 0 0 10px;
+  }
+  
+  /* Right to Left Bar */
+  .bar-right {
+    height: 25px;  
+    background-color: #ffffffab;  
+    width: 0;  
+    backdrop-filter: blur(3px);  
+    box-shadow: #ffffff 0 0 10px;
+  }
+  
+  /* When animate class is added */
+  .bar-left.animate {
+    animation: grow-left-to-right 2s ease-in-out forwards;
+  }
+  
+  .bar-right.animate {
+    animation: grow-right-to-left 2s ease-in-out forwards;
+  }
+  
+  /* Keyframes for growing left to right */
+  @keyframes grow-left-to-right {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  /* Keyframes for growing right to left */
+  @keyframes grow-right-to-left {
+    0% {
+      width: 0;
+      margin-left: auto;  
+    }
+    100% {
+      width: 100%;
+      margin-left: auto;
+    }
+  }
+  
+  /* ---------------------------------------
+    Scrollable Images
+--------------------------------------- */
+  .layout-container {
+    background-color: #ebebeb;
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    width: 100%; 
+    margin: 0 auto; 
+    margin-top: 1em; 
+    gap: 1em; 
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    padding: 1em; 
+    scrollbar-width: thin; 
+}
+
+.layout-container img {
+    display: block; 
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+/*Customizing the scrollbar for WebKit browsers (Chrome, Safari)*/
+.layout-container::-webkit-scrollbar {
+    height: 8px; 
+}
+
+.layout-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px; 
+}
+
+.layout-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* ---------------------------------------
+    Hobbies Section
+--------------------------------------- */
+.hobby-container {
+    display: flex; 
+    flex-direction: column; 
+    margin-top: 2em; 
+    gap: 40px; 
+    padding: 2em; 
+    background-color: #ebebeb;
+}
+
+@media (min-width: 768px) {
+    .hobby-container {
+        flex-direction: row; 
+        gap: 24px; 
+    }
+}
+
+/* Hobby card styles */
+.hobby-card {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Image styles */
+.hobby-image {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+}
+
+/* Content styles */
+.hobby-content {
+    padding: 24px; 
+    text-align: center; 
+}
+
+/* Title styles */
+.hobby-title {
+    font-size: 1.5em; 
+    font-weight: bold; 
+    margin: 0 0 16px 0; 
+}
+
+/* Description styles */
+.hobby-description {
+    font-size: 0.875em;
+    color: #333; 
+}
+
+/* ---------------------------------------
+    Footer
+--------------------------------------- */
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: var(--color-1);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1em;
+    font-size: 1.5em;
+  }
+
+
+
+
+
+
+
+
+

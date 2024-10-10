@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Page</title>
+
+    <!-- CSS linked -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- FontAwesome linked -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav id="home">
+
+      <!-- Checkbox to toggle the sidebar visibility -->
+      <input type="checkbox" id="sidebar-active" />
+
+      <!-- Button to open the sidebar, using an SVG icon -->
+      <label for="sidebar-active" class="open-sidebar-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="32px"
+          viewBox="0 -960 960 960"
+          width="32px"
+          fill="#000000"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          />
+        </svg>
+      </label>
+
+      <!-- Overlay for the sidebar -->
+      <label id="overlay" for="sidebar-active"></label>
+
+      <div class="links-container">
+
+        <!-- Button to close the sidebar -->
+        <label for="sidebar-active" class="close-sidebar-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </label>
+
+        <!-- Navigation links -->
+        <a class="home-link" href="#home">Homepage</a>
+        <a href="#skillset">Skillset</a>
+        <a href="#about">About</a>
+        <a href="#hobbies">Hobbies</a>
+      </div>
+    </nav>
+
+    <!-- Hero section with background img and text -->
+    <div class="main">
+      <div class="textbox">
+        <img src="img/me.png" />
+        <h1>Armi Lampen</h1>
+
+        <p>
+          I’m passionate about crafting beautiful, user-friendly websites and
+            delving into the world of programming. This page showcases my skills
+            and interests, reflecting my journey in web development and design.
+            Feel free to explore my projects and insights, and don’t hesitate to
+            reach out if you’d like to connect!
+              
+        </p>
+
+      <div class="email">
+        <i class="fa-solid fa-at fa-3x"></i>
+        <a href="mailto:&#97;&#114;&#109;&#105;&#46;&#108;&#97;&#109;&#112;&#101;&#110;&#64;&#111;&#117;&#116;&#108;&#111;&#111;&#107;&#46;&#99;&#111;&#109;">
+          &#97;&#114;&#109;&#105;&#46;&#108;&#97;&#109;&#112;&#101;&#110;&#64;&#111;&#117;&#116;&#108;&#111;&#111;&#107;&#46;&#99;&#111;&#109;</a>
+        </div>
+        
+      </div>
+
+      <!-- FIRST animation with vertical bars -->
+      <div class="bars">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+        <div class="bar bar-4"></div>
+        <div class="bar bar-5"></div>
+        <div class="bar bar-6"></div>
+        <div class="bar bar-7"></div>
+        <div class="bar bar-8"></div>
+        <div class="bar bar-9"></div>
+        <div class="bar bar-10"></div>
+      </div>
+    </div>
+
+    <!-- Divider with links to projects -->
+    <div class="divider" id="skillset">
+      <h2>See my projects here:</h2>
+      <div class="icons">
+        <a href="#">
+          <i class="fa-brands fa-github-alt fa-3x"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-codepen fa-3x"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- SECOND animation with horizontal bars -->
+    <div class="horizontal-bars-section">
+      <div class="horizontal-bars">
+        <div class="horizontal-bar bar-h1"></div>
+        <div class="horizontal-bar bar-h2"></div>
+        <div class="horizontal-bar bar-h3"></div>
+      </div>
+    </div>
+
+    <!-- Skills section -->
+    <div class="skills">
+
+      <!-- Skill 1 -->
+      <div class="skill-item">
+        <div class="skill-heading">
+          <i class="fa-solid fa-wand-magic-sparkles fa-2x"></i>
+          <h3>Frontend</h3>
+        </div>
+        <ul>
+          <li>CSS | HTML | JavaScript | Tailwind | Bootstrap | React | WordPress</li>
+          <li>I consider the visual side of frontend development as one of my
+            strengths, and I always aim to create visually appealing,
+            user-friendly and responsive interfaces.</li>
+        </ul>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="skill-item">
+        <div class="skill-heading">
+          <i class="fa-solid fa-server fa-2x"></i>
+          <h3>Backend</h3>
+        </div>
+        <ul>
+          <li>PHP | Python | Node.js | MySQL | MongoDB</li>
+          <li>While my core strength lies in frontend development, I am
+            dedicated to expanding my expertise in backend technologies.</li>
+        </ul>
+      </div>
+
+      <!-- Skill 3 -->
+      <div class="skill-item">
+        <div class="skill-heading">
+          <i class="fa-solid fa-screwdriver-wrench fa-2x"></i>
+          <h3>Tools</h3>
+        </div>
+        <ul>
+          <li>VS Code | Git | NPM | XAMPP | Figma | Photoshop | Premiere Pro</li>
+          <li>I am always looking for new tools and technologies to improve my
+            workflow and productivity.</li>
+        </ul>
+      </div>
+
+      <!-- Skill 4 -->
+      <div class="skill-item">
+        <div class="skill-heading">
+          <i class="fa-solid fa-circle-check fa-2x"></i>
+          <h3>Practices</h3>
+        </div>
+        <ul>
+          <li>Agile | Scrum | Kanban | Testing | Documentation | Version Control</li>
+          <li>I apply best practices to ensure the scalability,
+            maintainability, and efficiency of my code.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education section -->
+    <div class="education" id="about">
+
+      <!-- Left side on desktop -->
+      <div class="left-side">
+        <div class="certs">
+          <img src="img/htmlcss.png" />
+          <img src="img/js.png" />
+          <img src="img/html5.png" />
+        </div>
+        <div class="school">
+          <h3>Tieto- ja viestintätekniikan perustutkinto</h3>
+          <p>Taitotalo 2024</p>
+
+          <h4>Ylioppilastutkinto</h4>
+          <p>Kouvolan Yhteislyseo 2016</p>
+        </div>
+      </div>
+
+      <!-- THIRD bar animation (hidden on desktop) -->
+      <div class="bar-container">
+        <div class="bar-left"></div>
+        <br />
+        <div class="bar-right"></div>
+      </div>
+
+      <!-- Right side on desktop -->
+      <div class="right-side">
+        <div class="infotext">
+          <h3>Inspiration</h3>
+          <p>
+            I decided to pursue a career in IT after gaining interest in coding
+            through my hobbies. My studies in Taitotalo left me with a solid
+            foundation in programming and web development, and also gave me
+            invaluable experience in working with clients and in teams. I am
+            also a very strong independent learner, and I am always eager to
+            learn new things and improve my skills through my own projects, big
+            and small. At this point I would like to gain experience in the
+            field and work on projects that lets me utilize and hone my skills.
+            I am planning to continue my studies in the future.
+          </p>
+        </div>
+        <div class="text-on-img">
+          <h3>Work Experience</h3>
+          <p>I have a diverse work background that spans both physical labor and
+            office environments. My experience ranges from warehouse operations
+            and animal care to customer service and invoicing. Additionally, I
+            have worked in the healthcare industry as a personal assistant.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider for hobbies -->
+    <div class="divider" id="hobbies">
+      <h2>
+        Other Fun Stuff:
+      </h2>
+</div>
+
+    <!-- Horizontal scroll images -->
+    <div class="layout-container">
+      <img src="grid-img/1.jpg" />
+      <img src="grid-img/2.jpg" />
+
+
+      <img src="grid-img/5.jpg" />
+      <img src="grid-img/6.jpg" />
+      <img src="grid-img/7.jpg" />
+      <img src="grid-img/8.jpg" />
+
+      <img src="grid-img/10.jpg" />
+
+      <img src="grid-img/12.jpg" />
+      <img src="grid-img/13.jpg" />
+
+      <img src="grid-img/15.jpg" />
+      <img src="grid-img/16.jpg" />
+
+      <img src="grid-img/18.jpg" />
+
+      
+    </div>
+
+<!-- Hobbies section -->
+<div class="hobby-container">
+      
+      <!-- Hobby 1 -->
+      <div class="hobby-card">
+          <img src="img/darksign.png" alt="Videogames" class="hobby-image" />
+          <div class="hobby-content">
+              <h5 class="hobby-title">Video games</h5>
+              <p class="hobby-description">
+                  My all time favourites are the Dark Souls series, as well as
+                  Bloodborne and Elden Ring. I'm extremely passionate about the
+                  lore of these games and love to delve into it further in the
+                  form of Youtube videos and podcasts.
+              </p>
+          </div>
+      </div>
+
+      <!-- Hobby 2 -->
+      <div class="hobby-card">
+          <img src="img/gym.jpg" alt="Fitness" class="hobby-image" />
+          <div class="hobby-content">
+              <h5 class="hobby-title">Fitness</h5>
+              <p class="hobby-description">
+                  Training is a key part of my life. I focus on weight training,
+                  but also try to keep up my Yoga and Pilates routines. I see gym
+                  training as a great counterbalance to working in front of a
+                  computer and for my overall well-being.
+              </p>
+          </div>
+      </div>
+
+      <!-- Hobby 3 -->
+      <div class="hobby-card">
+          <img src="img/vette2.jpg" alt="Horses" class="hobby-image" />
+          <div class="hobby-content">
+              <h5 class="hobby-title">Horses</h5>
+              <p class="hobby-description">
+                  I have been riding horses since I was a child. I have also
+                  worked as a stable hand and have experience in horse care and
+                  training. Horses have always been close to my heart and I enjoy
+                  every opportunity to be around them.
+              </p>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Footer -->
+    <footer>
+      <div class="footer-text">
+        <p>© 2024 Armi Lampen</p>
+      </div>
+
+      <!-- JS linked -->
+    <script src="script.js"></script>
+  </body>
+</html>
